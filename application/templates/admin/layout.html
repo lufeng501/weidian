@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小店管理后台</title>
+    <link rel="stylesheet" href="/application/assets/public/bootstrap-3.3.0/css/bootstrap.min.css">
+    <script src="/application/assets/public/jquery-1.12.4.js"></script>
+    <script src="/application/assets/public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/application/assets/admin/layout.css">
+    <{block name=css}><{/block}>
+</head>
+<body>
+<div id="wrap" class="container-fluid">
+
+    <!-- 导航 begin -->
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">小店LOGO</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-user">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">登出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- 导航 end -->
+
+    <!-- 主体 beging -->
+    <section id="main" class="container-fluid">
+        <!-- 左边导航 begin -->
+        <section id="slider-left" class="col-lg-2 col-md-3 col-sm-12">
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <{foreach from=$menus key=k item=item}>
+                    <li role="presentation" class="<{$item['state']}>"><a href="<{$item['link']}>"><{$item['menu_name']}></a></li>
+                <{/foreach}>
+            </ul>
+        </section>
+        <!-- 左边导航 end -->
+        <!-- 右侧内容区 begin -->
+        <section id="right-content" class="col-lg-10 col-md-9 col-sm-12">
+            <{block name=body}><{/block}>
+        </section>
+        <!-- 右侧内容区 end -->
+    </section>
+    <!-- 主体 end-->
+
+    <!-- footer begin -->
+    <footer id="footer" class="container-fluid">
+        <p>
+            &copy; 小店版权所有
+        </p>
+    </footer>
+    <!-- footer end -->
+</div>
+<{block name=js}><{/block}>
+</body>
+</html>
