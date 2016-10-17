@@ -13,11 +13,9 @@ class Index extends MY_Controller
     }
 
     /**
-     * 首页-商品管理
+     * 首页
      */
     public function index() {
-        $data = array();
-        $data['menus'] = $this->menus;
-        $this->smarty->render('admin/index.html',$data);
+        $this->smarty->render('admin/index.html',$this->renderData);
     }
 }

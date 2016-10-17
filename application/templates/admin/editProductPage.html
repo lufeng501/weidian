@@ -1,0 +1,27 @@
+<{extends file='application/templates/admin/layout.html'}>
+<{block name=body}>
+<div class="hander-content" ng-app="App" ng-controller="ProductsCtrl">
+    <h3>商品信息</h3>
+    <h3>{{test}}</h3>
+    <uib-alert type="success" close="closeAlert($index)">成功加载ui-bootstrap-1.3.0</uib-alert>
+    <br>
+    <div class="row">
+    </div>
+</div>
+
+<{/block}>
+
+<{block name=js}>
+<script type="text/javascript" src="/application/assets/public/angular-plug/ui-bootstrap-tpls-1.3.0.min.js"></script>
+<script type="text/javascript">
+    var baseUrl = "/admin/products/index";
+    var app = angular.module("App", ['ui.bootstrap']);
+    app.controller("ProductsCtrl", function($scope) {
+        $scope.test = "hello world";
+        //跳转到新增商品页面
+        $scope.toAddProduct = function() {
+            window.location = "/admin/products/addProductPage";
+        }
+    });
+</script>
+<{/block}>
